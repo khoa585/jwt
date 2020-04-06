@@ -10,7 +10,7 @@ let { UsersDB, UsersField } = require('./../../databases/users');
 router.post('/login', validate(VALIDATON_LOGIN), async (req, res) => {
     console.log(req.body);
     let result = await UserModels.login(req.body);
-    console.log(result);
+    console.log('------------'+result);
     if (!result) {
         return ResponsiveHelper.json(req, res, ErrorEC.LOGIN_FAIL, null);
     }
